@@ -94,6 +94,17 @@
       I forgot about adding a message to the command "git commi -am "[message goes here]""
     </p>
   </div>
+  <section>
+    <p># Crear un nuevo commit en la rama master combinando
+      # los cambios de la rama cabecera:
+      git checkout master
+      git merge cabecera
+
+      # Crear un nuevo commit en la rama cabecera combinando
+      # los cambios de cualquier otra rama:
+      git checkout cabecera
+      git merge cualquier-otra-rama</p>
+  </section>
 
   <script src="app.js" module="true"></script>
 </body>
