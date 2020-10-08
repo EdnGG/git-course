@@ -44,10 +44,11 @@ let props = [
   },
 ]
 const filtering = () => {
-  let paragraph = document.querySelector("#paragraph")
+  let paragraph = document.querySelector('#paragraph')
   const newArray = props.filter((el) => {
     if (el.name === 'John') {
-      return paragraph.innerHTML = el.name
+      return (paragraph.innerHTML = el.name)
     }
   })
 }
+//Clever ;D
