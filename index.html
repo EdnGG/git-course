@@ -9,15 +9,24 @@
 </head>
 
 <body>
-  <h1>Iterating Arrays</h1>
+  <div class="main">
+    <h1>Iterating Arrays</h1>
 
-  <div class="div--array">
-    <h2>click the button to see if there's John's name inside of the array of objects'</h2>
-    <button onclick="filtering()">Filtering</button>
+    <div class="div--array_filter">
+      <h2>click the button to see if there's John's name inside of the array of objects'</h2>
+      <button onclick="filtering()">Filtering</button>
 
-    <p id="paragraph">
+      <p id="paragraph-filter"></p>
 
-    </p>
+    </div>
+
+    <div class="div--array_some">
+      <h2>click the button to see if at least there's people greater than 50 year old</h2>
+      <button onclick="someMethod()">Some Method</button>
+      <div id="div-paragraph-some"></div>
+      <!-- <p id="paragraph-some"></p> -->
+
+    </div>
 
   </div>
   <script src="./app.js"></script>

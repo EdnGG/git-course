@@ -3,6 +3,7 @@ let props = [
   {
     reservation: '001',
     name: 'Steven',
+    age: 5,
     lastName: 'Doe',
     eta: '15:00 hrs',
     status: 'Confirmado', //map
@@ -10,6 +11,7 @@ let props = [
   {
     reservation: '002',
     name: 'Victor',
+    age: 5,
     lastName: 'Doe',
     eta: '15:00 hrs',
     status: 'No Confirmado', //map
@@ -17,6 +19,7 @@ let props = [
   {
     reservation: '003',
     name: 'Brandon',
+    age: 10,
     lastName: 'Doe',
     eta: '15:00 hrs',
     status: 'No Confirmado', //map
@@ -24,6 +27,7 @@ let props = [
   {
     reservation: '004',
     name: 'Carlos',
+    age: 60,
     lastName: 'Doe',
     ETA: '15:00 hrs',
     status: 'Cancelado', //map
@@ -31,6 +35,7 @@ let props = [
   {
     reservation: '005',
     name: 'David',
+    age: 20,
     lastName: 'Doe',
     eta: '15:00 hrs',
     status: 'Confirmado', //map
@@ -38,16 +43,41 @@ let props = [
   {
     reservation: '006',
     name: 'John',
+    age: 30,
     lastName: 'Doe',
     eta: '15:00 hrs',
     status: 'Cancelado', //map
   },
 ]
+
+// Using filter()
+
 const filtering = () => {
-  let paragraph = document.querySelector("#paragraph")
-  const newArray = props.filter((el) => {
+  let paragraph = document.querySelector("#paragraph-filter")
+  props.filter((el) => {
     if (el.name === 'John') {
       return paragraph.innerHTML = el.name
     }
   })
+}
+
+// Using Some
+const someMethod = () => {
+  console.log('I been clicked')
+  let divParagraph = document.querySelector("#div-paragraph-some")
+  props.some(age => {
+    console.log(age)
+    age >= 50
+    let newAge = age
+    console.log(newAge)
+    console.log(age.length)
+
+    let message = `
+    <p class="paragraph-some">
+    True
+    </p>
+    `
+    return divParagraph.innerHTML = message
+  })
+
 }
