@@ -1,6 +1,59 @@
-body{
-  padding: 0; 
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+body {
+  padding: 0;
   margin: 0;
+}
+
+header {
+  width: 100%;
+  height: 70px;
+  border: 1px solid black;
+  background-color: #2E86AB;
+
+
+}
+
+nav {
+  width: 600px;
+  height: 40px;
+  float: right;
+
+}
+
+nav>ul {
+  display: flex;
+  justify-content: space-around;
+  list-style: none;
+
+
+}
+
+nav>ul>li {
+  font-size: 2.5rem;
+
+}
+
+nav>ul>li>a {
+  text-decoration: none;
+  color: white;
+}
+
+/* Disculpa mucho por esto, me caía del sueño  :( */
+main {
+  padding-top: 10px;
+  display: flex;
+  justify-content: center;
   text-align: center;
-  color:blue;
+
+}
+
+.main--card {
+
+  width: 300px;
+  border-radius: 10px;
+  box-shadow: 4px 3px 5px 1px;
 }
