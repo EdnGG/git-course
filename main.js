@@ -10,7 +10,10 @@ const $list = document.createElement('ul')
 console.log($list)
 
 $main.appendChild($list)
-$body.removeChild($img)
+/* I have to comment the line bellow in order to show 
+each task
+*/
+// $body.removeChild($img)
 $list.innerHTML = ''
 
 function getInputItem() {
@@ -18,15 +21,15 @@ function getInputItem() {
   if (!value) return
 
   const $li = document.createElement('li')
-
   const text = document.createTextNode(value)
-
   $li.appendChild(text)
 
   const $deleteButton = document.createElement('button')
   $deleteButton.innerText = 'Delete'
+
   const $doneButton = document.createElement('button')
   $doneButton.innerText = 'Done'
+
 
   $deleteButton.onclick = () => {
     $list.removeChild($li)

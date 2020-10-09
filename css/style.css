@@ -2,15 +2,31 @@ body,
 html {
   padding: 0;
   margin: 0;
+  background-color: #add8e6;
 }
 
 html {
-  font-size: 16px;
+  font-size: 20px;
   font-family: sans-serif;
 }
-
+/* Adding a padding on image div container */
+.div--main_image{
+  /* width: auto; */
+  /* display: block; */
+  /* margin: auto; */
+  display:flex;
+  justify-content: center;
+  padding:80px;
+  /* display: block; */
+}
+/* centering image */
 img {
-  width: 150px;
+  /* display:flex;
+  justify-content: center; */
+  width: 600px;
+  height:400px;
+  margin: auto;
+  display: block;
 }
 
 .done {
@@ -28,21 +44,49 @@ h1 {
   color: whitesmoke;
 }
 
-input {
-  width: 69%;
-  height: 100px;
-  box-sizing: border-box;
-}
-
-body>button {
-  width: 30%;
-  height: 100px;
-  box-sizing: border-box;
-}
-
-main {
+.div--elements{
   width: 100%;
+  height: 60px;
+  display:flex;
+  justify-content: center;
 }
+
+input {
+  width: 30%;
+  /* height: 50px; */
+  /* box-sizing: border-box; */
+  border-radius: 25px;
+  border: 2px solid #73AD21;
+  padding: 20px;
+}
+
+button {
+  width: 5%;
+  /* height: 100px; */
+  border-radius: 25px;
+  border: 2px solid #73AD21;
+  padding-left: 20px;
+  text-align: center;
+  /* box-sizing: border-box; */
+}
+
+.section--main__list{
+width: 100%;
+display:flex;
+flex-direction:column;
+flex-wrap: wrap;
+/* justify-items: center; */
+/* justify-content: center; */
+}
+
+.section--main__list, button{
+  /* width:200px; */
+  font-size: 10%;
+}
+
+/* main {
+  width: 100%;
+} */
 
 ul {
   display: flex;
