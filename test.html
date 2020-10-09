@@ -1,214 +1,147 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Git</title>
+  </head>
 
-  <title>Git</title>
-</head>
+  <body>
+    <div class="div-main">
+      <h1>This element has been modified by DEVELOP branch</h1>
+      <p>Let the pain git show begin</p>
+      <h2>adding styles && adding SSH Key</h2>
+      <div></div>
+      <h3>usando el comando git reset HEAD</h3>
+      <div>Using HTTPS Protocol</div>
+      <ul>
+        Copy address HTTPS
+      </ul>
+      <li>git remote add origin [ https address]</li>
+      <li>git remote</li>
+      <li>git remote -v</li>
+      <li>git push origin master</li>
+      <li>git pull origin main --allow-unrelated-histories</li>
 
-<body>
-  <div class="div-main">
-    <h1>This element has been modified by DEVELOP branch
-    </h1>
-    <h2>adding styles && adding SSH Key</h2>
-    <div></div>
-    <h3>usando el comando git reset HEAD</h3>
-    <div>Using HTTPS Protocol</div>
-    <ul>Copy address HTTPS </ul>
-    <li>git remote add origin [ https address] </li>
-    <li>git remote</li>
-    <li>git remote -v</li>
-    <li>git push origin master</li>
-    <li>git pull origin main --allow-unrelated-histories</li>
-
-
-    <p>Git reset y git rm son comandos con utilidades muy diferentes, pero aún así se confunden muy fácilmente.
-
-      git rm
-      Este comando nos ayuda a eliminar archivos de Git sin eliminar su historial del sistema de versiones. Esto quiere
-      decir
-      que si necesitamos recuperar el archivo solo debemos “viajar en el tiempo” y recuperar el último commit antes de
-      borrar
-      el archivo en cuestión.
-
-      Recuerda que git rm no puede usarse así nomás. Debemos usar uno de los flags para indicarle a Git cómo eliminar
-      los
-      archivos que ya no necesitamos en la última versión del proyecto:
-
-      git rm --cached: Elimina los archivos del área de Staging y del próximo commit pero los mantiene en nuestro disco
-      duro.
-      git rm --force: Elimina los archivos de Git y del disco duro. Git siempre guarda todo, por lo que podemos acceder
-      al
-      registro de la existencia de los archivos, de modo que podremos recuperarlos si es necesario (pero debemos usar
-      comandos
-      más avanzados).
-      git reset
-      Este comando nos ayuda a volver en el tiempo. Pero no como git checkout que nos deja ir, mirar, pasear y volver.
-      Con git
-      reset volvemos al pasado sin la posibilidad de volver al futuro. Borramos la historia y la debemos sobreescribir.
-      No hay
-      vuelta atrás.
-
-      Este comando es muy peligroso y debemos usarlo solo en caso de emergencia. Recuerda que debemos usar alguna de
-      estas dos
-      opciones:
-
-      Hay dos formas de usar git reset: con el argumento --hard, borrando toda la información que tengamos en el área de
-      staging (y perdiendo todo para siempre). O, un poco más seguro, con el argumento --soft, que mantiene allí los
-      archivos
-      del área de staging para que podamos aplicar nuestros últimos cambios pero desde un commit anterior.
-
-      git reset --soft: Borramos todo el historial y los registros de Git pero guardamos los cambios que tengamos en
-      Staging,
-      así podemos aplicar las últimas actualizaciones a un nuevo commit.
-      git reset --hard: Borra todo. Todo todito, absolutamente todo. Toda la información de los commits y del área de
-      staging
-      se borra del historial.
-      ¡Pero todavía falta algo!
-
-      git reset HEAD: Este es el comando para sacar archivos del área de Staging. No para borrarlos ni nada de eso, solo
-      para
-      que los últimos cambios de estos archivos no se envíen al último commit, a menos que cambiemos de opinión y los
-      incluyamos de nuevo en staging con git add, por supuesto.
-      ¿Por qué esto es importante?
-      Imagina el siguiente caso:
-
-      Hacemos cambios en los archivos de un proyecto para una nueva actualización. Todos los archivos con cambios se
-      mueven al
-      área de staging con el comando git add. Pero te das cuenta de que uno de esos archivos no está listo todavía.
-      Actualizaste el archivo pero ese cambio no debe ir en el próximo commit por ahora.
-
-      ¿Qué podemos hacer?
-
-      Bueno, todos los cambios están en el área de Staging, incluido el archivo con los cambios que no están listos.
-      Esto
-      significa que debemos sacar ese archivo de Staging para poder hacer commit de todos los demás.
-
-      ¡Al usar git rm lo que haremos será eliminar este archivo completamente de git! Todavía tendremos el historial de
-      cambios de este archivo, con la eliminación del archivo como su última actualización. Recuerda que en este caso no
-      buscábamos eliminar un archivo, solo dejarlo como estaba y actualizarlo después, no en este commit.
-
-      En cambio, si usamos git reset HEAD, lo único que haremos será mover estos cambios de Staging a Unstaged.
-      Seguiremos
-      teniendo los últimos cambios del archivo, el repositorio mantendrá el archivo (no con sus últimos cambios pero sí
-      con
-      los últimos en los que hicimos commit) y no habremos perdido nada.
-
-      Conclusión: Lo mejor que puedes hacer para salvar tu puesto y evitar un incendio en tu trabajo es conocer muy bien
-      la
-      diferencia y los riesgos de todos los comandos de Git........
-      I forgot about adding a message to the command "git commi -am "[message goes here]""
-    </p>
-  </div>
-  <div>
-    <section>
-      <p># Crear un nuevo commit en la rama master combinando
-        # los cambios de la rama cabecera:
-        git checkout master
-        git merge cabecera
-
-        # Crear un nuevo commit en la rama cabecera combinando
-        # los cambios de cualquier otra rama:
-        git checkout cabecera
-        git merge cualquier-otra-rama</p>
-    </section>
-    <section>
-      <h4>class # 17</h4>
-      <p>Git nunca borra nada a menos que nosotros se lo indiquemos. Cuando usamos los comandos git merge o git checkout
-        estamos
-        cambiando de rama o creando un nuevo commit, no borrando ramas ni commits (recuerda que puedes borrar commits
-        con git
-        reset y ramas con git branch -d).
-
-        Git es muy inteligente y puede resolver algunos conflictos automáticamente: cambios, nuevas líneas, entre otros.
-        Pero
-        algunas veces no sabe cómo resolver estas diferencias, por ejemplo, cuando dos ramas diferentes hacen cambios
-        distintos
-        a una misma línea.
-
-        Esto lo conocemos como conflicto y lo podemos resolver manualmente, solo debemos hacer el merge, ir a nuestro
-        editor de
-        código y elegir si queremos quedarnos con alguna de estas dos versiones o algo diferente. Algunos editores de
-        código
-        como VSCode nos ayudan a resolver estos conflictos sin necesidad de borrar o escribir líneas de texto, basta con
-        hundir
-        un botón y guardar el archivo.
-
-        Recuerda que siempre debemos crear un nuevo commit para aplicar los cambios del merge. Si Git puede resolver el
-        conflicto hará commit automáticamente. Pero, en caso de no pueda resolverlo, debemos solucionarlo y hacer el
-        commit.
-
-        Los archivos con conflictos por el comando git merge entran en un nuevo estado que conocemos como Unmerged.
-        Funcionan
-        muy parecido a los archivos en estado Unstaged, algo así como un estado intermedio entre Untracked y Unstaged,
-        solo
-        debemos ejecutar git add para pasarlos al área de staging y git commit para aplicar los cambios en el
-        repositorio.</p>
-    </section>
-  </div>
-  <div>
-    <section>
-      <p>SSH KEYS</p><br>
-      <p>Configura tus llaves SSH en local
-        Primer paso: Generar tus llaves SSH. Recuerda que es muy buena idea proteger tu llave privada con una
-        contraseña.
-
-        ssh-keygen -t rsa -b 4096 -C "tu@email.com"
-        Segundo paso: Terminar de configurar nuestro sistema.
-
-        En Windows y Linux:
-
-        # Encender el "servidor" de llaves SSH de tu computadora:
-        eval $(ssh-agent -s)
-
-        # Añadir tu llave SSH a este "servidor":
-        ssh-add ruta-donde-guardaste-tu-llave-privada
-        En Mac:
-
-        # Encender el "servidor" de llaves SSH de tu computadora:
-        eval "$(ssh-agent -s)"
-
-        # Si usas una versión de OSX superior a Mac Sierra (v10.12)
-        # debes crear o modificar un archivo "config" en la carpeta
-        # de tu usuario con el siguiente contenido (ten cuidado con
-        # las mayúsculas):
-        Host *
-        AddKeysToAgent yes
-        UseKeychain yes
-        IdentityFile ruta-donde-guardaste-tu-llave-privada
-
-        # Añadir tu llave SSH al "servidor" de llaves SSH de tu
-        # computadora (en caso de error puedes ejecutar este
-        # mismo comando pero sin el argumento -K):
-        ssh-add -K ruta-donde-guardaste-tu-llave-privada</p>
-    </section>
-  </div>
-  <div>
-    <section>
-      <p>Tags y versiones en Git y GitHub
+      <p>
+        Git reset y git rm son comandos con utilidades muy diferentes, pero aún así se confunden muy
+        fácilmente. git rm Este comando nos ayuda a eliminar archivos de Git sin eliminar su
+        historial del sistema de versiones. Esto quiere decir que si necesitamos recuperar el
+        archivo solo debemos “viajar en el tiempo” y recuperar el último commit antes de borrar el
+        archivo en cuestión. Recuerda que git rm no puede usarse así nomás. Debemos usar uno de los
+        flags para indicarle a Git cómo eliminar los archivos que ya no necesitamos en la última
+        versión del proyecto: git rm --cached: Elimina los archivos del área de Staging y del
+        próximo commit pero los mantiene en nuestro disco duro. git rm --force: Elimina los archivos
+        de Git y del disco duro. Git siempre guarda todo, por lo que podemos acceder al registro de
+        la existencia de los archivos, de modo que podremos recuperarlos si es necesario (pero
+        debemos usar comandos más avanzados). git reset Este comando nos ayuda a volver en el
+        tiempo. Pero no como git checkout que nos deja ir, mirar, pasear y volver. Con git reset
+        volvemos al pasado sin la posibilidad de volver al futuro. Borramos la historia y la debemos
+        sobreescribir. No hay vuelta atrás. Este comando es muy peligroso y debemos usarlo solo en
+        caso de emergencia. Recuerda que debemos usar alguna de estas dos opciones: Hay dos formas
+        de usar git reset: con el argumento --hard, borrando toda la información que tengamos en el
+        área de staging (y perdiendo todo para siempre). O, un poco más seguro, con el argumento
+        --soft, que mantiene allí los archivos del área de staging para que podamos aplicar nuestros
+        últimos cambios pero desde un commit anterior. git reset --soft: Borramos todo el historial
+        y los registros de Git pero guardamos los cambios que tengamos en Staging, así podemos
+        aplicar las últimas actualizaciones a un nuevo commit. git reset --hard: Borra todo. Todo
+        todito, absolutamente todo. Toda la información de los commits y del área de staging se
+        borra del historial. ¡Pero todavía falta algo! git reset HEAD: Este es el comando para sacar
+        archivos del área de Staging. No para borrarlos ni nada de eso, solo para que los últimos
+        cambios de estos archivos no se envíen al último commit, a menos que cambiemos de opinión y
+        los incluyamos de nuevo en staging con git add, por supuesto. ¿Por qué esto es importante?
+        Imagina el siguiente caso: Hacemos cambios en los archivos de un proyecto para una nueva
+        actualización. Todos los archivos con cambios se mueven al área de staging con el comando
+        git add. Pero te das cuenta de que uno de esos archivos no está listo todavía. Actualizaste
+        el archivo pero ese cambio no debe ir en el próximo commit por ahora. ¿Qué podemos hacer?
+        Bueno, todos los cambios están en el área de Staging, incluido el archivo con los cambios
+        que no están listos. Esto significa que debemos sacar ese archivo de Staging para poder
+        hacer commit de todos los demás. ¡Al usar git rm lo que haremos será eliminar este archivo
+        completamente de git! Todavía tendremos el historial de cambios de este archivo, con la
+        eliminación del archivo como su última actualización. Recuerda que en este caso no
+        buscábamos eliminar un archivo, solo dejarlo como estaba y actualizarlo después, no en este
+        commit. En cambio, si usamos git reset HEAD, lo único que haremos será mover estos cambios
+        de Staging a Unstaged. Seguiremos teniendo los últimos cambios del archivo, el repositorio
+        mantendrá el archivo (no con sus últimos cambios pero sí con los últimos en los que hicimos
+        commit) y no habremos perdido nada. Conclusión: Lo mejor que puedes hacer para salvar tu
+        puesto y evitar un incendio en tu trabajo es conocer muy bien la diferencia y los riesgos de
+        todos los comandos de Git........ I forgot about adding a message to the command "git commi
+        -am "[message goes here]""
       </p>
-      <p>Los tags o etiquetas nos permiten asignar versiones a los commits con cambios más importantes o significativos
-        de
-        nuestro proyecto.
-
-        Comandos para trabajar con etiquetas:
-
-        Crear un nuevo tag y asignarlo a un commit: git tag -a nombre-del-tag id-del-commit.
-        Borrar un tag en el repositorio local: git tag -d nombre-del-tag.
-        Listar los tags de nuestro repositorio local: git tag o git show-ref --tags.
-        Publicar un tag en el repositorio remoto: git push origin --tags.
-        Borrar un tag del repositorio remoto: git tag -d nombre-del-tag y git push origin :refs/tags/nombre-del-tag.</p>
-      <br>
-      <p>git config --global alias.superlog "log --graph --abbrev-commit --decorate --date=relative
-        --format=format:'%C(bold
-        blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold
-        yellow)%d%C(reset)' --all"</p>
-    </section>
-
-  </div>
-  <script src="app.js"></script>
-</body>
-
+    </div>
+    <div>
+      <section>
+        <p>
+          # Crear un nuevo commit en la rama master combinando # los cambios de la rama cabecera:
+          git checkout master git merge cabecera # Crear un nuevo commit en la rama cabecera
+          combinando # los cambios de cualquier otra rama: git checkout cabecera git merge
+          cualquier-otra-rama
+        </p>
+      </section>
+      <section>
+        <h4>class # 17</h4>
+        <p>
+          Git nunca borra nada a menos que nosotros se lo indiquemos. Cuando usamos los comandos git
+          merge o git checkout estamos cambiando de rama o creando un nuevo commit, no borrando
+          ramas ni commits (recuerda que puedes borrar commits con git reset y ramas con git branch
+          -d). Git es muy inteligente y puede resolver algunos conflictos automáticamente: cambios,
+          nuevas líneas, entre otros. Pero algunas veces no sabe cómo resolver estas diferencias,
+          por ejemplo, cuando dos ramas diferentes hacen cambios distintos a una misma línea. Esto
+          lo conocemos como conflicto y lo podemos resolver manualmente, solo debemos hacer el
+          merge, ir a nuestro editor de código y elegir si queremos quedarnos con alguna de estas
+          dos versiones o algo diferente. Algunos editores de código como VSCode nos ayudan a
+          resolver estos conflictos sin necesidad de borrar o escribir líneas de texto, basta con
+          hundir un botón y guardar el archivo. Recuerda que siempre debemos crear un nuevo commit
+          para aplicar los cambios del merge. Si Git puede resolver el conflicto hará commit
+          automáticamente. Pero, en caso de no pueda resolverlo, debemos solucionarlo y hacer el
+          commit. Los archivos con conflictos por el comando git merge entran en un nuevo estado que
+          conocemos como Unmerged. Funcionan muy parecido a los archivos en estado Unstaged, algo
+          así como un estado intermedio entre Untracked y Unstaged, solo debemos ejecutar git add
+          para pasarlos al área de staging y git commit para aplicar los cambios en el repositorio.
+        </p>
+      </section>
+    </div>
+    <div>
+      <section>
+        <p>SSH KEYS</p>
+        <br />
+        <p>
+          Configura tus llaves SSH en local Primer paso: Generar tus llaves SSH. Recuerda que es muy
+          buena idea proteger tu llave privada con una contraseña. ssh-keygen -t rsa -b 4096 -C
+          "tu@email.com" Segundo paso: Terminar de configurar nuestro sistema. En Windows y Linux: #
+          Encender el "servidor" de llaves SSH de tu computadora: eval $(ssh-agent -s) # Añadir tu
+          llave SSH a este "servidor": ssh-add ruta-donde-guardaste-tu-llave-privada En Mac: #
+          Encender el "servidor" de llaves SSH de tu computadora: eval "$(ssh-agent -s)" # Si usas
+          una versión de OSX superior a Mac Sierra (v10.12) # debes crear o modificar un archivo
+          "config" en la carpeta # de tu usuario con el siguiente contenido (ten cuidado con # las
+          mayúsculas): Host * AddKeysToAgent yes UseKeychain yes IdentityFile
+          ruta-donde-guardaste-tu-llave-privada # Añadir tu llave SSH al "servidor" de llaves SSH de
+          tu # computadora (en caso de error puedes ejecutar este # mismo comando pero sin el
+          argumento -K): ssh-add -K ruta-donde-guardaste-tu-llave-privada
+        </p>
+      </section>
+    </div>
+    <div>
+      <section>
+        <p>Tags y versiones en Git y GitHub</p>
+        <p>
+          Los tags o etiquetas nos permiten asignar versiones a los commits con cambios más
+          importantes o significativos de nuestro proyecto. Comandos para trabajar con etiquetas:
+          Crear un nuevo tag y asignarlo a un commit: git tag -a nombre-del-tag id-del-commit.
+          Borrar un tag en el repositorio local: git tag -d nombre-del-tag. Listar los tags de
+          nuestro repositorio local: git tag o git show-ref --tags. Publicar un tag en el
+          repositorio remoto: git push origin --tags. Borrar un tag del repositorio remoto: git tag
+          -d nombre-del-tag y git push origin :refs/tags/nombre-del-tag.
+        </p>
+        <br />
+        <p>
+          git config --global alias.superlog "log --graph --abbrev-commit --decorate --date=relative
+          --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset)
+          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all"
+        </p>
+      </section>
+    </div>
+    <script src="app.js"></script>
+  </body>
 </html>
