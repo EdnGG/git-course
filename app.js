@@ -53,13 +53,19 @@ let props = [
 // Using filter()
 
 const filtering = () => {
+<<<<<<< HEAD
   let paragraph = document.querySelector("#paragraph-filter")
   props.filter((el) => {
+=======
+  let paragraph = document.querySelector('#paragraph')
+  const newArray = props.filter((el) => {
+>>>>>>> styles
     if (el.name === 'John') {
-      return paragraph.innerHTML = el.name
+      return (paragraph.innerHTML = el.name)
     }
   })
 }
+<<<<<<< HEAD
 
 // Using Some
 const someMethod = () => {
@@ -81,3 +87,6 @@ const someMethod = () => {
   })
 
 }
+=======
+//Clever ;D
+>>>>>>> styles
