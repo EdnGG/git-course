@@ -17,3 +17,5 @@ Agrege un poco de estilos a tu rama companero, me gusto como manejaste el dom di
 # My bad
 
 Lo leí demasiado tarde perdona siempre hago git pull pero modificaré unas líneas de mi rama y empezamos. Con los conflictos perdón, perdón(no te preocupes companero).
+
+# practicando
